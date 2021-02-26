@@ -8,12 +8,51 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require '../vendor/autoload.php';
 
+$name = $_POST['name'];
+$phone = $_POST['phone'];
+$comment = $_POST['comment'];
+
+$message = <<<EOT
+<html lang="ru">
+<head>
+  <title>Заявка с сайта</title>
+</head>
+<body>
+  <p>Содержание</p>
+  <table>
+    <tr>
+      <td>Имя</td>
+      <td>$name</td>
+    </tr>
+    <tr>
+      <td>Телефон</td>
+      <td>$phone</td>
+    </tr>
+    <tr>
+      <td>Комментарий</td>
+      <td>$comment</td>
+    </tr>
+  </table>
+</body>
+</html>
+EOT;
+
+$alt_message = <<<EOT
+Заявка с сайта
+
+Содержание
+Имя: $name
+Телефон: $phone
+Сообщение: $comment
+EOT;
+
+
 //Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->SMTPDebug = SMTP::DEBUG_OFF;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.yandex.ru';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -37,12 +76,13 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Это пиздатый заголовок';
-    $mail->Body    = 'Это охуенное боди в пиздатом ХТМЛ <b>жырный ебать!</b>';
-    $mail->AltBody = 'Это хуевый плейновый текст';
+    $mail->Subject = 'Заявка с сайта';
+    $mail->Body    = $message;
+    $mail->AltBody = $alt_message;
 
     $mail->send();
-    echo 'Message has been sent';
+    #echo 'Message has been sent';
+    header('Location: /spasibo');
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
