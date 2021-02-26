@@ -13,7 +13,7 @@ body {
 }
 
 section {
-    padding: 50px 0px
+    padding: 50px 0;
 }
 
 p {
@@ -2625,10 +2625,6 @@ section.we-are-creative .container ul li:last-child {
         font-size: 25px;
     }
 
-    .main-banner{
-        height: 185vh;
-    }
-
     .navbar-collapse{
         padding-right: 0;
     }
@@ -2848,6 +2844,6 @@ section.we-are-creative .owl-carousel .item h4 {
 @media (max-width: 767px) {
     .banner-content {
         position:relative;
-        margin-top: 20px;
+        margin-top: 50px;
     }
 }

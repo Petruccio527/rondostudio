@@ -1,0 +1,14 @@
+{
+    "name": "anton/rondostudio",
+    "type": "project",
+    "license": "FFF",
+    "authors": [
+        {
+            "name": "Antonio Solo",
+            "email": "as@solotony.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.3"
+    }
+}
