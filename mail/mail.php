@@ -21,15 +21,15 @@ $message = <<<EOT
   <p>Содержание</p>
   <table>
     <tr>
-      <td>Имя</td>
+      <td>Имя:</td>
       <td>$name</td>
     </tr>
     <tr>
-      <td>Телефон</td>
+      <td>Телефон:</td>
       <td>$phone</td>
     </tr>
     <tr>
-      <td>Комментарий</td>
+      <td>Комментарий:</td>
       <td>$comment</td>
     </tr>
   </table>
@@ -64,7 +64,7 @@ try {
 
     //Recipients
     $mail->setFrom('info@rguitar.ru', 'Студия звукозаписи «Рондо»');
-    $mail->addAddress('as@solotony.com', 'Joe User');     //Add a recipient
+    $mail->addAddress('peter.butrimoff@mail.ru', 'Петр');     //Add a recipient
     //$mail->addAddress('ellen@example.com');               //Name is optional
     $mail->addReplyTo('info@rguitar.ru', 'Студия звукозаписи «Рондо»');
     //$mail->addCC('cc@example.com');
