@@ -24,6 +24,8 @@ try {
 
     //Recipients
     $mail->setFrom('info@rguitar.ru', 'Студия звукозаписи «Рондо»');
+    $mail->addAddress('as@solotony.com', 'Joe User');     //Add a recipient
+    //$mail->addAddress('ellen@example.com');               //Name is optional
     $mail->addReplyTo('info@rguitar.ru', 'Студия звукозаписи «Рондо»');
     //$mail->addCC('cc@example.com');
     //$mail->addBCC('bcc@example.com');
