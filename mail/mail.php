@@ -21,6 +21,7 @@ try {
     $mail->Password   = '9I4I2bTbMK';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
     $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+    $mail->CharSet = 'UTF-8';
 
     //Recipients
     $mail->setFrom('info@rguitar.ru', 'Студия звукозаписи «Рондо»');
@@ -36,9 +37,9 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    $mail->Subject = 'Это пиздатый заголовок';
+    $mail->Body    = 'Это охуенное боди в пиздатом ХТМЛ <b>жырный ебать!</b>';
+    $mail->AltBody = 'Это хуевый плейновый текст';
 
     $mail->send();
     echo 'Message has been sent';
