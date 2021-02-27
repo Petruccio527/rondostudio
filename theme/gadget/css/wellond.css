@@ -2847,3 +2847,10 @@ section.we-are-creative .owl-carousel .item h4 {
         margin-top: 50px;
     }
 }
+
+@media (min-width: 767px) {
+    .banner-content p {
+        line-height:35px;
+    }
+}
+
